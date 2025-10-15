@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EV Loan Calculator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- electricwali.com(manish sahani) -->
+    <div id="header"></div>
+
+    <!-- electricwali.com(manish sahani) -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h2>Drive Your Dream EV with Affordable Loans</h2>
+                    <p>Calculate your Electric Vehicle loan EMI and compare offers from top banks. Get the best EV financing with our smart calculator.</p>
+                    <div class="hero-buttons">
+                        <a href="#calculator" class="btn btn-primary">Calculate EMI</a>
+                        <a href="#features" class="btn btn-secondary">Learn More</a>
+                    </div>
+                   
+                        <div class="hero-stats">
+                        <div class="stat">
+                            <h3>35+</h3>
+                            <p>Top Banks</p>
+                        </div>
+                        <div class="stat">
+                            <h3>Very Fast</h3>
+                            <p>Compare Speed</p>
+                        </div>
+                        <div class="stat">
+                            <h3>100%</h3>
+                            <p>Data Privacy</p>
+                        </div>
+                       
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="ev-car-animation">
+                        <i class="fas fa-car"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- electricwali.com(manish sahani) -->
+    <section id="calculator" class="calculator-section">
+        <div class="container">
+            <h3>EV Loan EMI Calculator</h3>
+            <p class="section-subtitle">Calculate your monthly EMI and compare offers from top banks</p>
+            
+            <div class="calculator">
+                <div class="loan-tabs">
+                    <div class="loan-tab active" data-loan="electric-car">
+                        <i class="fas fa-car"></i>
+                        <span>Electric Car</span>
+                    </div>
+                    <div class="loan-tab" data-loan="electric-suv">
+                        <i class="fas fa-car-side"></i>
+                        <span>Electric SUV</span>
+                    </div>
+                    <div class="loan-tab" data-loan="electric-bike">
+                        <i class="fas fa-motorcycle"></i>
+                        <span>Electric Bike</span>
+                    </div>
+                    <div class="loan-tab" data-loan="electric-scooter">
+                        <i class="fas fa-scooter"></i>
+                        <span>Electric Scooter</span>
+                    </div>
+                    <div class="loan-tab" data-loan="commercial-ev">
+                        <i class="fas fa-truck"></i>
+                        <span>Commercial EV</span>
+                    </div>
+                    <div class="loan-tab" data-loan="luxury-ev">
+                        <i class="fas fa-gem"></i>
+                        <span>Luxury EV</span>
+                    </div>
+                </div>
+
+                <div class="input-section">
+                    <div class="input-group">
+                        <label>Loan Amount (₹)</label>
+                        <div class="input-wrapper">
+                            <input type="number" id="loanAmount" placeholder="Enter loan amount">
+                        </div>
+                        <div class="error-msg" id="amountError"></div>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Loan Tenure (Years)</label>
+                        <div class="input-wrapper">
+                            <input type="number" id="loanTenure" placeholder="Enter tenure">
+                        </div>
+                        <div class="error-msg" id="tenureError"></div>
+                    </div>
+
+                    <button class="calculate-btn" id="calculateBtn">Calculate EMI</button>
+                </div>
+
+                <div class="results-section">
+                    <div class="summary-card" id="loanSummary">
+                        <h3><i class="fas fa-chart-pie"></i> Loan Summary</h3>
+                        <div class="summary-item">
+                            <div class="label">EV Type</div>
+                            <div class="value" id="summaryType">Electric Car</div>
+                        </div>
+                        <div class="summary-item">
+                            <div class="label">Loan Amount</div>
+                            <div class="value" id="summaryAmount">₹0</div>
+                        </div>
+                        <div class="summary-item">
+                            <div class="label">Loan Tenure</div>
+                            <div class="value" id="summaryTenure">0 years</div>
+                        </div>
+                        <div class="summary-item">
+                            <div class="label">Best Rate</div>
+                            <div class="value" id="summaryRate">0%</div>
+                        </div>
+                        <div class="summary-item">
+                            <div class="label">Lowest EMI</div>
+                            <div class="value" id="summaryEMI">₹0</div>
+                        </div>
+
+                        <div class="best-offer">
+                            <div class="best-offer-title">
+                                <i class="fas fa-crown"></i>
+                                <span>Best Loan Offer</span>
+                            </div>
+                            <div id="bestBank">-</div>
+                            <a href="#" class="apply-best-btn" id="bestBankLink" target="_blank"><i class="fas fa-paper-plane"></i> Apply Now</a>
+                        </div>
+                    </div>
+
+                    <div class="bank-grid" id="bankGrid">
+                        <div class="empty-state">
+                            <h3>Calculate Your EV Loan</h3>
+                            <p>Enter your loan details and click "Calculate EMI" to see personalized loan offers from top banks and lenders.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- electricwali.com(manish sahani) -->
+    <section id="features" class="features-section">
+        <div class="container">
+            <h2>Why Choose Our EV Loan Calculator?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Accurate Calculations</h3>
+                    <p>Get precise EMI calculations with real-time interest rates from top banks and financial institutions.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h3>Compare Multiple Banks</h3>
+                    <p>Compare loan offers from 35+ banks and choose the best option for your needs.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Instant Results</h3>
+                    <p>Get instant EMI calculations and detailed breakdowns without any delays.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3>Secure & Friendly</h3>
+                    <p>Your data is completely secure and we don't store any personal information.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- electricwali.com(manish sahani) -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What is an EMI?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>EMI stands for Equated Monthly Installment. It's the fixed amount you pay to the bank or lender every month until your loan is completely repaid.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How is EMI calculated?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>EMI is calculated using the formula: EMI = [P x R x (1+R)^N]/[(1+R)^N-1], where P is the principal amount, R is the monthly interest rate, and N is the loan tenure in months.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What factors affect my EV loan eligibility?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Your loan eligibility depends on factors like credit score, income, employment history, existing loans, and the EV model you're purchasing.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Are there special interest rates for EVs?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, many banks offer special green vehicle loans with lower interest rates for electric vehicles to promote sustainable transportation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- electricwali.com(manish sahani) -->
+    <div id="footer"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
